@@ -1,5 +1,6 @@
 package com.hlw.springboot_study;
 
+import com.hlw.springboot_study.service.StorageService;
 import com.hlw.springboot_study.service.bo.Quote;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
@@ -14,6 +15,7 @@ import org.springframework.web.client.RestTemplate;
 @SpringBootApplication
 @EnableScheduling
 @Slf4j
+//@EnableConfigurationProperties(StorageProperties.class)
 public class SpringbootStudyApplication {
 
     public static void main(String[] args) {
@@ -38,5 +40,13 @@ public class SpringbootStudyApplication {
         factory.setConnectTimeout(15000);
         factory.setReadTimeout(5000);
         return factory;
+    }
+
+    @Bean
+    CommandLineRunner init(StorageService storageService) {
+        return (args) -> {
+            storageService.deleteAll();
+            storageService.init();
+        };
     }
 }
