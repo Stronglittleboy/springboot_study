@@ -1,11 +1,13 @@
 package com.hlw.springboot_study;
 
-import com.hlw.springboot_study.service.StorageService;
 import com.hlw.springboot_study.service.bo.Quote;
+import com.hlw.springboot_study.uploadfile.StorageProperties;
+import com.hlw.springboot_study.uploadfile.StorageService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.client.ClientHttpRequestFactory;
 import org.springframework.http.client.SimpleClientHttpRequestFactory;
@@ -15,7 +17,7 @@ import org.springframework.web.client.RestTemplate;
 @SpringBootApplication
 @EnableScheduling
 @Slf4j
-//@EnableConfigurationProperties(StorageProperties.class)
+@EnableConfigurationProperties(StorageProperties.class)
 public class SpringbootStudyApplication {
 
     public static void main(String[] args) {

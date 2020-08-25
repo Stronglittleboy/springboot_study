@@ -1,6 +1,7 @@
 package com.hlw.springboot_study.controller;
 
-import com.hlw.springboot_study.service.StorageService;
+import com.hlw.springboot_study.uploadfile.StorageFileNotFoundException;
+import com.hlw.springboot_study.uploadfile.StorageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;

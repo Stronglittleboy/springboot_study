@@ -1,4 +1,4 @@
-package com.hlw.springboot_study.service;
+package com.hlw.springboot_study.uploadfile;
 
 import org.springframework.core.io.Resource;
 import org.springframework.web.multipart.MultipartFile;
